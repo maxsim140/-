@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+main()
+{
+setlocale(LC_ALL, "Rus");
+int  x, k;
+int Attempts = 1; // Попыток
+printf("\nПользователь загадал число от 1 до 10. Попробуйте отгодать его за три попытки.");
+printf("\nВведите первое число:");
+scanf("%d", &k);
+srand (time(NULL));
+x=rand()%9+1;
+while (Attempts<=3)
+{
+if(x==k)
+{
+printf("\nДа! Пользователь загадал число %d !",  k);
+break;
+}
+else
+{
+Attempts++;
+if (Attempts == 4)
+{
+printf("\nУвы, вы не отгодали загаданное число. Это было число %d !", x);
+break;
+}
+printf("\nНет, это не число %d! Попытка № %d:", k, Attempts);
+scanf("%d", &k);
+}
+
+getchar();
+}
+}
