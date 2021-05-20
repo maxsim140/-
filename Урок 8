@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <locale.h>
 #include <time.h>
 
@@ -7,12 +9,12 @@ main()
 {
 setlocale(LC_ALL, "Rus");
 int  x, k;
-int Attempts = 1; // Попыток
-printf("\nПользователь загадал число от 1 до 10. Попробуйте отгодать его за три попытки.");
+int Attempts = 3; // Попыток
+printf("\nПользователь загадал число от 1 до 15. Попробуйте отгодать его за три попытки.");
 printf("\nВведите первое число:");
 scanf("%d", &k);
 srand (time(NULL));
-x=rand()%9+1;
+x=rand()%10+3;
 while (Attempts<=3)
 {
 if(x==k)
@@ -23,7 +25,7 @@ break;
 else
 {
 Attempts++;
-if (Attempts == 4)
+if (Attempts == 3)
 {
 printf("\nУвы, вы не отгодали загаданное число. Это было число %d !", x);
 break;
@@ -35,3 +37,4 @@ scanf("%d", &k);
 getchar();
 }
 }
+
